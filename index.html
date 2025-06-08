@@ -8,13 +8,11 @@
  box-sizing: border-box;
 }
 
-
 body {
  font-family: Arial;
  padding: 10px;
  background: #f1f1f1;
 }
-
 
 /* Header/Blog Title */
 .header {
@@ -23,18 +21,15 @@ body {
  background: rgba(255, 255, 255, 0);
 }
 
-
 .header h1 {
  font-size: 50px;
 }
-
 
 /* Style the top navigation bar */
 .topnav {
  overflow: hidden;
  background-color: #3cff00;
 }
-
 
 /* Style the topnav links */
 .topnav a {
@@ -46,19 +41,16 @@ body {
  text-decoration: none;
 }
 
-
 /* Change color on hover */
 .topnav a:hover {
  background-color: #f2ff00;
  color: rgb(140, 0, 255);
 }
 
-
 .leftcolumn {  
  float: center;
  width: 75%;
 }
-
 
 /* Add a card effect for articles */
 .card {
@@ -68,14 +60,12 @@ body {
  margin-bottom: 20px;
 }
 
-
 /* Fake image */
 .fakeimg {
  background-color: #aaa;
  width: 100%;
  padding: 20px;
 }
-
 
 /* Clear floats after the columns */
 .row::after {
@@ -118,6 +108,42 @@ p {animation: color-change 1s infinite;
 50% { color: blue; }
 100% { color: red; }
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+.button {
+  position: relative;
+  background-color: #04AA6D;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
 
 </style>
 </head>
@@ -135,6 +161,7 @@ p {animation: color-change 1s infinite;
 <h1><p class="p3">location TBA</p></h1>
 <h1>WE ARE CHAOTICALLY QUEER</h1>
 <h1>INFO COMING WHEN WE HAVE IT</h1>
+<button class="button">EXCITED!</button>
 </div>
 
 
@@ -158,12 +185,12 @@ p {animation: color-change 1s infinite;
 <H1><p class="grabbing">LAST YEAR</p></H1>
 </div>
 
-<img src="shadowpride2024.jpeg" alt="sp2024" width="800" height="550">
-<img src="shadowpride2024_1.jpeg" alt="sp20241" width="800" height="550">
-<img src="shadowpride2024_2.jpeg" alt="sp20242" width="800" height="550">
-<img src="shadowpride2024_3.jpeg" alt="sp20243" width="800" height="550">
-<img src="shadowpride2024_4.jpeg" alt="sp20244" width="800" height="550">
-<img src="shadowpride2024_5.jpeg" alt="sp20245" width="800" height="550">
+<img src="shadowpride2024.jpeg" style="width:100%;">
+<img src="shadowpride2024_1.jpeg" style="width:100%;">
+<img src="shadowpride2024_2.jpeg" style="width:100%;">
+<img src="shadowpride2024_3.jpeg" style="width:100%;">
+<img src="shadowpride2024_4.jpeg" style="width:100%;">
+<img src="shadowpride2024_5.jpeg" style="width:100%;">
 
 
 <div class="row">

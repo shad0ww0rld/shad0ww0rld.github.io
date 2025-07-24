@@ -1,217 +1,838 @@
-<!DOCTYPE html>
-<html>
-<body>
-<head>
-<style>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHAD0W W0RLD *** VARJ0 VIRTA</title>
+    <meta
+      name="description"
+      content="SHAD0W W0RLD ~*~ SAVE-THE-DATE ~*~ 8.7.2025"
+    />
 
-* {
- box-sizing: border-box;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
 
-body {
- font-family: Arial;
- padding: 10px;
- background: #f1f1f1;
-}
+    <style>
+      body {
+        background-color: black;
+        background-image: url("./bg.jpg");
+        background-size: cover;
+        margin: 0 !important;
+      }
 
-/* Header/Blog Title */
-.header {
- padding: 30px;
- text-align: center;
- background: rgba(255, 255, 255, 0);
-}
+      #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
 
-.header h1 {
- font-size: 50px;
-}
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
 
-/* Style the top navigation bar */
-.topnav {
- overflow: hidden;
- background-color: #3cff00;
-}
+      .logo {
+        width: 80vw;
+        margin-top: -50px;
+        max-width: 1200px;
+        position: relative;
 
-/* Style the topnav links */
-.topnav a {
- float: left;
- display: block;
- color: #ee00ff;
- text-align: center;
- padding: 14px 16px;
- text-decoration: none;
-}
+        img {
+          width: 100%;
+          position: relative;
+        }
 
-/* Change color on hover */
-.topnav a:hover {
- background-color: #f2ff00;
- color: rgb(140, 0, 255);
-}
+        h3 {
+          position: absolute;
+          right: 100px;
+          bottom: 200px;
+          transform: rotate(-35deg);
+          color: red !important;
+          text-shadow: 0 0 10px white;
+        }
+      }
 
-.leftcolumn {  
- float: center;
- width: 75%;
-}
+      .title {
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        z-index: 4;
+        color: white;
+        font-family: "Lacquer", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
 
-/* Add a card effect for articles */
-.card {
- background-color: rgb(255, 0, 234);
- padding: 20px;
- margin-top: 20px;
- margin-bottom: 20px;
-}
+      @media (max-width: 600px) {
+        .title {
+          top: 20px;
+        }
+      }
 
-/* Fake image */
-.fakeimg {
- background-color: #aaa;
- width: 100%;
- padding: 20px;
-}
+      article {
+        text-align: center;
+        margin-top: -100px;
+        position: relative;
+      }
 
-/* Clear floats after the columns */
-.row::after {
- content: "";
- display: table;
- clear: both;
-}
+      .links {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 60vw;
+        max-width: 800px;
+        margin: auto;
 
+        a {
+          font-family: "Lacquer", system-ui;
+          color: white;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 2rem;
+          padding: 40px 40px;
+          border-radius: 100%;
+          text-shadow: 0 0 10px red;
+          padding: 20px;
+          box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+          backdrop-filter: blur(5px);
+          transition:
+            box-shadow 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
 
-   body {
- background-color: rgb(59, 255, 55);
- animation: mymove 5s infinite;
-}
+          &:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+          }
+        }
+      }
 
+      .floating-one {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform: rotate(-20deg);
 
-@keyframes mymove {
- from {background-color: rgb(59, 255, 55);}
- to {background-color: rgb(255, 0, 187);}
-}
+        img {
+          width: 100px;
+          height: auto;
+        }
 
+        p {
+          color: white;
+          font-family: "Kode Mono", system-ui, monospace;
+          font-weight: 400;
+          font-style: normal;
+          text-align: center;
+          max-width: 200px;
+          text-shadow: 0 0 10px red;
+        }
+      }
 
-.p3 {
- font-family: "Lucida Console", "Courier New", monospace;
-}
+      .floating-two {
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
+        p {
+          color: blue;
+          font-family: "Kode Mono", system-ui, monospace;
+          font-weight: 400;
+          text-transform: uppercase;
+          font-style: normal;
+          text-align: center;
+          max-width: 200px;
+          text-shadow: 0 0 10px blue;
+        }
+      }
 
-h1 {
- color: white;
- text-shadow: 5px 5px 2px rgb(157, 0, 255), 0 0 25px #ff00f2, 0 0 5px rgb(255, 0, 217);
-}
-.help {cursor: help;}
-.grabbing {cursor: -webkit-grabbing; cursor: grabbing;}
+      @media (max-width: 600px) {
+        .logo {
+          width: 100vw;
 
+          h3 {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            transform: rotate(0deg);
+            text-align: center;
+            margin-top: -20px;
+            color: white !important;
+            text-shadow: 0 0 10px red;
+          }
+        }
 
-p {animation: color-change 1s infinite;
-   }
+        .links {
+          width: 100%;
+          margin: 0 12px;
 
+          a {
+            font-size: 1.5rem;
+            padding: 20px;
+            margin: 0 20px;
+            white-space: nowrap;
+          }
+        }
 
-@keyframes color-change {  0% { color: red; }
-50% { color: blue; }
-100% { color: red; }
+        article {
+          margin-top: 20px;
+        }
+      }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      h1 {
+        font-family: "Lacquer", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 4.5rem;
+        text-shadow: 0 0 10px red;
+        color: white;
+        padding: 0;
+        margin: 0;
+      }
 
-.button {
-  position: relative;
-  background-color: #04AA6D;
-  border: none;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 20px;
-  width: 200px;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
+      h2,
+      h3 {
+        font-family: "Lacquer", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2rem;
+        color: white;
+        text-shadow: 0 0 10px red;
+        padding: 0;
+        margin: 0;
+      }
 
-.button:after {
-  content: "";
-  background: #f1f1f1;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px !important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
-}
+      h2 {
+        font-size: 1.75rem;
+        text-shadow: 0 0 10px red;
+      }
 
-.button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 4rem;
+        }
 
-</style>
-</head>
-</body>
+        h3 {
+          font-size: 1.5rem;
+        }
 
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
 
-<body>
+      .text-container {
+        color: #c1fdff;
+        font-family: "Kode Mono", system-ui, monospace;
+        font-weight: 400;
+        font-style: normal;
+        backdrop-filter: blur(15px);
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 50px;
+        flex-wrap: wrap;
 
-<div class="header">
-<H1><p class="grabbing">RISE UP FOR LIBERATION</p></H1>
-<h1>SAVE THE DATE</h1>
-<h1><p class="p3">shadowPRIDE 2025</p></h1>
-<h1><p class="p3">Sat 28 June</p></h1>
-<h1><p class="p3">20:00-07:30</p></h1>
-<H1><a href="https://www.instagram.com/xo_shadowpride_xo/">DM FOR LOCATION</a></H1>
-<h1>SORRY NOT SORRY FOR THE CHAOTIC WEBSITE, WE MADE IT OURSELVES</h1>
-<button class="button">EXCITED!</button>
-</div>
+        @media (max-width: 600px) {
+          margin-top: 20px;
+        }
 
-<div class="topnav">
-<a href="https://t.me/+oFe79WH991A2MDc0">shadowPRIDE CHAT</a>
-<a href="https://givebutter.com/iPxsAf">DONATE HERE</a>
-<a href="https://cryptpad.fr/pad/#/2/pad/edit/mdCP8UVB4Q7dP7oUi7oBBKqZ/">TAKE A SHIFT, HELP US OUT</a>
-<a href="https://www.instagram.com/xo_shadowpride_xo/">DM 4 LOCATION</a>
-</div>
+        div {
+          width: 500px;
+        }
 
-<div class="row">
-<H1><p class="grabbing">OFFICIAL INVITATION</p></H1>
-</div>
+        li {
+          list-style: none;
+          margin: 0;
+          padding: 0;
 
-<img src="sp1.jpg" style="width:100%;">
-<img src="sp2.jpg" style="width:100%;">
-<img src="sp3.jpg" style="width:100%;">
-<img src="sp4.jpg" style="width:100%;">
-<img src="sp5.jpg" style="width:100%;">
-<img src="sp6.jpg" style="width:100%;">
-<img src="sp7.jpg" style="width:100%;">
-<img src="sp8.jpg" style="width:100%;">
-<img src="sp9.jpg" style="width:100%;">
-<img src="sp10.jpg" style="width:100%;">
-<img src="sp11.jpg" style="width:100%;">
+          &:empty {
+            padding-bottom: 20px;
+          }
+        }
 
-<div class="row">
-<H1><p class="grabbing">MOOD BOARD</p></H1>
-</div>
+        h3 {
+          margin-top: 20px;
+          font-size: 1.5rem;
+          text-shadow: 0 0 10px #c1fdff;
+        }
+      }
 
-<img src="photo_2025-06-01 22.33.22.jpeg" alt="liberation" width="400" height="500">
-<img src="2025-06-01 22.30.13.jpg" alt="plushie" width="400" height="500">
-<img src="photo_2025-06-03 04.40.17.jpeg" alt="acab" width="400" height="500">
-<img src="photo_2025-06-03 05.06.08.jpeg" alt="dancefloor healing" width="400" height="500">
+      .footer-container {
+        padding: 20px;
+        text-align: center;
+        color: black;
+        font-family: "Kode Mono", system-ui, monospace;
+        font-weight: 400;
+        font-style: normal;
+        background-color: rgba(255, 255, 255, 0.4);
 
-<div class="row">
-<H1><p class="grabbing">LAST YEAR</p></H1>
-</div>
+        div {
+          padding-top: 40px;
+        }
+        img {
+          max-width: 400px;
+        }
 
-<img src="shadowpride2024.jpeg" style="width:100%;">
-<img src="shadowpride2024_1.jpeg" style="width:100%;">
-<img src="shadowpride2024_2.jpeg" style="width:100%;">
-<img src="shadowpride2024_3.jpeg" style="width:100%;">
-<img src="shadowpride2024_4.jpeg" style="width:100%;">
-<img src="shadowpride2024_5.jpeg" style="width:100%;">
+        @media (max-width: 600px) {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
 
+      .header-container {
+        position: relative;
+        img {
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    </style>
+  </head>
 
-<div class="row">
-<H1><p class="grabbing">FROM STONEWALL TO PALESTINE</p></H1>
-<H1><p class="grabbing">NO PRIDE IN GENOCIDE</p></H1>
-</div>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="title">
+      <h2>SHAD0W W0RLD</h2>
+    </div>
+    <div class="header-container">
+      <img src="./manifesto.png" alt="manifesto" />
+    </div>
+    <div class="logo-container">
+      <div class="logo">
+        <img src="./title.webp" alt="SHAD0W W0RLD" />
+        <h3>Festival</h3>
+      </div>
+      <article>
+        <h1>8.–10.8.25</h1>
+      </article>
+      <div class="links">
+        <a
+          href="https://www.instagram.com/xo_shadowpride_xo/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          iG page
+        </a>
+        <a
+          href="https://t.me/+oFe79WH991A2MDc0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          tG chat
+        </a>
+      </div>
+      <div class="floating-one">
+        <img src="./flag.png" alt="flag" />
+        <p>NO CULTURE FOR G3N0C1D3 SUPPORTERS</p>
+      </div>
+      <div class="floating-two">
+        <p>Program TBA</p>
+      </div>
+    </div>
+    <div class="text-container">
+      <div>
+        <h3>FRIDAY:</h3>
+        <ul>
+          <li>Opening parade 14:00</li>
+          <li>⚲ Dallapénpuisto</li>
+          <li></li>
+          <li>Radio 18-20 @museumofimpossibleforms</li>
+          <li>⚲ Aallonhalkoja 9 L1 & online</li>
+          <li></li>
+          <li>Rave as resistance 20-</li>
+          <li>⚲ Mustikkamaankuja 1</li>
+        </ul>
+      </div>
 
+      <div>
+        <h3>SATURDAY:</h3>
+        <ul>
+          <li>VarjoVirta fest 14-21 @harjuelaa</li>
+          <li>⚲ Dallapénpuisto</li>
+          <li></li>
+          <li>Radio 17-19 @idahelsinki</li>
+          <li>⚲ Kaikukatu 4</li>
+          <li></li>
+          <li>Rave as resistance 22-</li>
+          <li>⚲ Mustikkamaankuja 1</li>
+        </ul>
+      </div>
 
-</body>
+      <div>
+        <h3>SUNDAY:</h3>
+        <ul>
+          <li>Resting & care ++ 14-</li>
+          <li>⚲ Mustikkamaankuja 1</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-container">
+      <p>
+        Joy as act of global solidarity and resistance, practice of collective
+        liberation!
+      </p>
+      <p>We support FLOW STRIKE 🍉🍉🍉</p>
+
+      <div class="center">
+        <h3>DOWN with IMPERIALISM</h3>
+        <img src="./long.png" alt="long live palestine" />
+        <h3>& LONG LIVE THE PEOPLE</h3>
+      </div>
+    </div>
+
+    <script>
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Utils
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      function cycle(value, total) {
+        return ((value % total) + total) % total;
+      }
+
+      function scaleBetween(unscaledNum, minAllowed, maxAllowed, min, max) {
+        return (
+          ((maxAllowed - minAllowed) * (unscaledNum - min)) / (max - min) +
+          minAllowed
+        );
+      }
+
+      function movePointAtAngle(point, angle, distance) {
+        return {
+          x: point.x + Math.cos(angle) * distance,
+          y: point.y + Math.sin(angle) * distance,
+        };
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Element
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Element {
+        dpr = 1;
+        toValue = (value) => value * this.dpr;
+        draw = () => {};
+        update = () => {};
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Wave
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Wave extends Element {
+        constructor(pointAmount, p1, p2) {
+          super();
+          this.p1 = p1;
+          this.p2 = p2;
+
+          const dx = p2.x - p1.x;
+          const dy = p2.y - p1.y;
+
+          const vx = dx / (pointAmount - 1);
+          const vy = dy / (pointAmount - 1);
+
+          this.vertices = new Array(pointAmount).fill(null).map((p, i) => ({
+            x: p1.x + vx * i,
+            y: p1.y + vy * i,
+          }));
+        }
+
+        draw = ({ ctx }) => {
+          ctx.lineCap = "round";
+          ctx.lineWidth = this.toValue(2);
+          ctx.strokeStyle = "#ccc";
+
+          ctx.beginPath();
+          ctx.moveTo(this.vertices[0].x, this.vertices[0].y);
+
+          for (let k = 0; k < this.vertices.length - 1; k++) {
+            const p1 = this.vertices[k];
+            const p2 = this.vertices[k + 1];
+
+            const cpx = (p1.x + p2.x) / 2;
+            const cpy = (p1.y + p2.y) / 2;
+
+            // ctx.fillStyle = 'white';
+            // ctx.fillRect(p1.x, p1.y, 10, 10);
+
+            if (k === this.vertices.length - 2) {
+              ctx.quadraticCurveTo(p1.x, p1.y, p2.x, p2.y);
+            } else {
+              ctx.quadraticCurveTo(p1.x, p1.y, cpx, cpy);
+            }
+          }
+
+          ctx.stroke();
+        };
+
+        update = ({ tick }) => {
+          const l = this.vertices.length;
+          const r = 1 / l;
+          this.vertices = this.vertices.map((p, i) => ({
+            x: p.x,
+            y: p.y + this.toValue(Math.sin(tick / 10 + i)),
+          }));
+        };
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Gate
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Gate extends Element {
+        constructor({ radius, amount }) {
+          super();
+          this.amount = amount;
+          this.radius = this.toValue(radius);
+          this.diameter = this.radius * 2;
+
+          this.setValues();
+          this.setupWaves();
+        }
+
+        setValues() {
+          this.w = this.toValue(window.innerWidth);
+          this.h = this.toValue(window.innerHeight);
+          this.hw = this.w / 2;
+          this.hh = this.h / 2;
+        }
+
+        setupWaves() {
+          // Gate dims
+          this.px = this.hw - this.radius;
+          this.py = this.hh - this.radius;
+          this.pw = this.diameter;
+          this.ph = this.diameter;
+          this.waves = [];
+
+          const extend = 2;
+
+          for (let i = -extend; i < this.amount + extend; i++) {
+            const dy = (this.ph / this.amount) * i;
+            const p1 = {
+              x: this.px,
+              y: this.py + dy,
+            };
+            const p2 = {
+              x: this.px + this.pw,
+              y: this.py + dy,
+            };
+            this.waves.push(new Wave(10, p1, p2));
+          }
+        }
+
+        reset = () => {
+          this.setValues();
+          this.setupWaves();
+        };
+
+        drawBg(canvas) {
+          canvas.ctx.beginPath();
+
+          const gradient = canvas.ctx.createLinearGradient(
+            this.px,
+            this.py,
+            this.px,
+            this.py + this.diameter,
+          );
+          gradient.addColorStop(0, "#2a5298");
+          gradient.addColorStop(1, "#4298b7");
+
+          const wobble = this.toValue(Math.sin(canvas.tick / 20) * 10);
+          const offset = this.toValue(5);
+
+          canvas.ctx.arc(
+            this.hw,
+            this.hh,
+            this.radius + offset + wobble,
+            0,
+            2 * Math.PI,
+          );
+          canvas.ctx.fillStyle = gradient;
+          canvas.ctx.fill();
+        }
+
+        draw = (canvas) => {
+          this.drawBg(canvas);
+
+          canvas.ctx.save();
+          canvas.ctx.beginPath();
+          canvas.ctx.arc(this.hw, this.hh, this.radius, 0, 2 * Math.PI);
+          canvas.ctx.clip();
+
+          this.waves.map((wave) => {
+            wave.draw(canvas);
+            wave.update(canvas);
+          });
+
+          canvas.ctx.restore();
+        };
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Ring
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Ring extends Element {
+        constructor({
+          radius,
+          pointAmount,
+          speed,
+          decay,
+          acceleration,
+          wobble,
+          warp,
+        }) {
+          super();
+          this.points = [];
+
+          this.w = this.toValue(window.innerWidth);
+          this.h = this.toValue(window.innerHeight);
+          this.hw = this.w / 2;
+          this.hh = this.h / 2;
+          this.speed = this.toValue(speed);
+          this.decay = decay;
+          this.acceleration = acceleration;
+          this.lineWidth = this.toValue(1);
+          this.warp = this.toValue(warp);
+          this.wobble = this.toValue(wobble);
+          this.radOff = (2 * Math.PI) / pointAmount;
+
+          this.opacityStroke = 1;
+          this.opacityFill = 0;
+          this.opacityDecay = 1 / this.decay;
+
+          this.center = {
+            x: this.hw,
+            y: this.hh,
+          };
+
+          for (let i = 0; i < pointAmount; i++) {
+            const radian = ((Math.PI * 2) / pointAmount) * i;
+            const x = this.center.x + radius * Math.cos(radian);
+            const y = this.center.y + radius * Math.sin(radian);
+
+            this.points.push({
+              x,
+              y,
+              radian,
+            });
+          }
+        }
+
+        get stroke() {
+          this.opacityStroke -= this.opacityDecay;
+          const r = Math.floor(170 + Math.sin(this.decay / 10) * 60);
+          const g = Math.floor(130 + Math.sin(this.decay / 5) * 40);
+          // const b = Math.floor(130 + (Math.sin(this.decay / 5) * 40));
+
+          return `rgba(${r}, ${g}, 200, ${this.opacityStroke})`;
+        }
+
+        draw = ({ ctx }) => {
+          const { points: p, toValue: v } = this;
+
+          ctx.lineWidth = this.lineWidth;
+          ctx.strokeStyle = this.stroke;
+          ctx.beginPath();
+          ctx.moveTo(
+            (p[cycle(-1, p.length)].x + p[0].x) / 2,
+            (p[cycle(-1, p.length)].y + p[0].y) / 2,
+          );
+
+          for (var i = 0; i < p.length; i++) {
+            ctx.quadraticCurveTo(
+              p[i].x,
+              p[i].y,
+              (p[i].x + p[cycle(i + 1, p.length)].x) / 2,
+              (p[i].y + p[cycle(i + 1, p.length)].y) / 2,
+            );
+          }
+
+          ctx.closePath();
+
+          ctx.globalCompositeOperation = "lighter";
+          ctx.stroke();
+          ctx.globalCompositeOperation = "source-over";
+        };
+
+        update = ({ tick }) => {
+          this.speed *= this.acceleration;
+          // this.lineWidth *= (this.acceleration / 2);
+
+          this.points = this.points.map((p, i) => {
+            const wobbleAmount =
+              Math.sin(tick / 20 + i * this.radOff) * this.wobble;
+            const warpAmount = Math.cos(tick / 100) * this.warp;
+            const { x, y } = movePointAtAngle(p, p.radian, this.speed);
+
+            return {
+              ...p,
+              x: x + wobbleAmount - warpAmount,
+              y: y - wobbleAmount + warpAmount,
+            };
+          });
+
+          if (!this.dead) {
+            --this.decay;
+            if (this.decay === 0) {
+              this.dead = true;
+            }
+          }
+        };
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Portal
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Portal {
+        constructor(time, ringConfig) {
+          this.time = time;
+          this.ringConfig = ringConfig;
+          this.rings = [new Ring(this.ringConfig)];
+        }
+
+        reset = () => {
+          this.rings = [];
+        };
+
+        addRing() {
+          this.rings.push(new Ring(this.ringConfig));
+        }
+
+        draw = () => {};
+
+        update = ({ ctx, tick }) => {
+          if (tick % this.time === 0) {
+            this.addRing();
+          }
+          // filter dead while drawing and updating
+          this.rings = this.rings.filter((ring) => {
+            ring.draw({ ctx, tick });
+            ring.update({ ctx, tick });
+            return ring.dead !== true;
+          });
+        };
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Background
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Background extends Element {
+        draw = () => {};
+      }
+
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
+      // Canvas
+      //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡*/
+
+      class Canvas {
+        constructor(elements = []) {
+          // setup a canvas
+          this.canvas = document.getElementById("canvas");
+          this.dpr = 1;
+          this.ctx = this.canvas.getContext("2d");
+          this.ctx.scale(this.dpr, this.dpr);
+          // stores
+          this.elements = elements;
+          this.tick = 0;
+          this.mouse = { x: 0, y: 0 };
+          // run
+          this.setCanvasSize();
+          this.setupListeners();
+        }
+
+        setupListeners() {
+          window.addEventListener("resize", this.setCanvasSize);
+          window.addEventListener("mousemove", this.setPointer);
+        }
+
+        setPointer = ({ clientX, clientY }) => {
+          const x = clientX;
+          const y = clientY;
+          this.mouse = { x, y };
+        };
+
+        setCanvasSize = () => {
+          this.canvas.width = window.innerWidth * this.dpr;
+          this.canvas.height = window.innerHeight * this.dpr;
+          this.canvas.style.width = window.innerWidth + "px";
+          this.canvas.style.height = window.innerHeight + "px";
+        };
+
+        addElement(newElement) {
+          this.elements = [...this.elements, newElement];
+          return this.elements.length - 1;
+        }
+
+        removeElement(deleteIndex) {
+          this.elements = this.elements.filter((el, i) => i !== deleteIndex);
+          return this.elements;
+        }
+
+        update() {
+          this.elements.map(({ update }) => update(this));
+        }
+
+        draw() {
+          this.elements.map(({ draw }) => draw(this));
+        }
+
+        render = () => {
+          this.draw();
+          this.update();
+          ++this.tick;
+          window.requestAnimationFrame(this.render);
+        };
+      }
+
+      const canvas = new Canvas([
+        new Background(),
+        new Portal(5, {
+          radius: 4,
+          pointAmount: 3,
+          speed: 0.2,
+          decay: 200,
+          acceleration: 1.02,
+          wobble: 1,
+          warp: 3,
+        }),
+      ]);
+
+      canvas.render();
+    </script>
+  </body>
 </html>

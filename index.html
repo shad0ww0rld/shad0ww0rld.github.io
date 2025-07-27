@@ -52,20 +52,20 @@
         margin-top: -50px;
         max-width: 1200px;
         position: relative;
+      }
 
-        img {
-          width: 100%;
-          position: relative;
-        }
+      .logo img {
+        width: 100%;
+        position: relative;
+      }
 
-        h3 {
-          position: absolute;
-          right: 100px;
-          bottom: 200px;
-          transform: rotate(-35deg);
-          color: red !important;
-          text-shadow: 0 0 10px white;
-        }
+      .logo h3 {
+        position: absolute;
+        right: 100px;
+        bottom: 200px;
+        transform: rotate(-35deg);
+        color: red !important;
+        text-shadow: 0 0 10px white;
       }
 
       .title {
@@ -103,27 +103,27 @@
         width: 60vw;
         max-width: 800px;
         margin: auto;
+      }
 
-        a {
-          font-family: "Lacquer", system-ui;
-          color: white;
-          text-decoration: none;
-          font-weight: 400;
-          font-size: 2rem;
-          padding: 40px 40px;
-          border-radius: 100%;
-          text-shadow: 0 0 10px red;
-          padding: 20px;
-          box-shadow: 0 0 20px rgba(255, 0, 0, 1);
-          backdrop-filter: blur(5px);
-          transition:
-            box-shadow 0.3s ease-in-out,
-            transform 0.3s ease-in-out;
+      .links a {
+        font-family: "Lacquer", system-ui;
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 2rem;
+        padding: 40px 40px;
+        border-radius: 100%;
+        text-shadow: 0 0 10px red;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+        backdrop-filter: blur(5px);
+        transition:
+          box-shadow 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
+      }
 
-          &:hover {
-            box-shadow: 0 0 30px rgba(255, 0, 0, 1);
-          }
-        }
+      .links a:hover {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1);
       }
 
       .floating-one {
@@ -136,21 +136,21 @@
         justify-content: center;
         flex-direction: column;
         transform: rotate(-20deg);
+      }
 
-        img {
-          width: 100px;
-          height: auto;
-        }
+      .floating-one img {
+        width: 100px;
+        height: auto;
+      }
 
-        p {
-          color: white;
-          font-family: "Kode Mono", system-ui, monospace;
-          font-weight: 400;
-          font-style: normal;
-          text-align: center;
-          max-width: 200px;
-          text-shadow: 0 0 10px red;
-        }
+      .floating-one p {
+        color: white;
+        font-family: "Kode Mono", system-ui, monospace;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        max-width: 200px;
+        text-shadow: 0 0 10px red;
       }
 
       .floating-two {
@@ -162,45 +162,46 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+      }
 
-        p {
-          color: blue;
-          font-family: "Kode Mono", system-ui, monospace;
-          font-weight: 400;
-          text-transform: uppercase;
-          font-style: normal;
-          text-align: center;
-          max-width: 200px;
-          text-shadow: 0 0 10px blue;
-        }
+      .floating-two p {
+        color: white;
+        font-family: "Kode Mono", system-ui, monospace;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-style: normal;
+        text-align: center;
+        max-width: 200px;
+        text-shadow: 0 0 10px blue;
+        transform: rotate(10deg);
       }
 
       @media (max-width: 600px) {
         .logo {
           width: 100vw;
+        }
 
-          h3 {
-            position: relative;
-            bottom: 0;
-            right: 0;
-            transform: rotate(0deg);
-            text-align: center;
-            margin-top: -20px;
-            color: white !important;
-            text-shadow: 0 0 10px red;
-          }
+        .logo h3 {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          transform: rotate(0deg);
+          text-align: center;
+          margin-top: -20px;
+          color: white !important;
+          text-shadow: 0 0 10px red;
         }
 
         .links {
           width: 100%;
           margin: 0 12px;
+        }
 
-          a {
-            font-size: 1.5rem;
-            padding: 20px;
-            margin: 0 20px;
-            white-space: nowrap;
-          }
+        .links a {
+          font-size: 1.5rem;
+          padding: 20px;
+          margin: 0 20px;
+          white-space: nowrap;
         }
 
         article {
@@ -262,30 +263,32 @@
         padding: 20px;
         margin-top: 50px;
         flex-wrap: wrap;
+      }
 
-        @media (max-width: 600px) {
+      @media (max-width: 600px) {
+        .text-container {
           margin-top: 20px;
         }
+      }
 
-        div {
-          width: 500px;
-        }
+      .text-container div {
+        width: 500px;
+      }
 
-        li {
-          list-style: none;
-          margin: 0;
-          padding: 0;
+      .text-container li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-          &:empty {
-            padding-bottom: 20px;
-          }
-        }
+      .text-container li:empty {
+        padding-bottom: 20px;
+      }
 
-        h3 {
-          margin-top: 20px;
-          font-size: 1.5rem;
-          text-shadow: 0 0 10px #c1fdff;
-        }
+      .text-container h3 {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        text-shadow: 0 0 10px #c1fdff;
       }
 
       .footer-container {
@@ -296,28 +299,36 @@
         font-weight: 400;
         font-style: normal;
         background-color: rgba(255, 255, 255, 0.4);
+      }
 
-        div {
-          padding-top: 40px;
-        }
-        img {
-          max-width: 400px;
-        }
+      .footer-container div {
+        padding-top: 40px;
+      }
 
-        @media (max-width: 600px) {
-          img {
-            max-width: 100%;
-          }
+      .footer-container img {
+        max-width: 400px;
+      }
+
+      @media (max-width: 600px) {
+        .footer-container img {
+          max-width: 100%;
         }
       }
 
       .header-container {
         position: relative;
-        img {
-          width: 100vw;
-          max-width: 800px;
-          margin: 0 auto;
-          display: block;
+      }
+
+      .header-container img {
+        width: 100vw;
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      @media (max-width: 600px) {
+        .header-container {
+          display: none;
         }
       }
     </style>
